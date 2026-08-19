@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-obsidian-950 text-white font-sans antialiased;
+    overflow-x: hidden;
+  }
+}
+
+@layer components {
+  .pixel-font {
+    font-family: 'Press Start 2P', monospace;
+  }
+  .btn-block {
+    @apply relative inline-flex items-center justify-center gap-2 px-6 py-3 font-bold rounded-lg transition-all duration-200 active:translate-y-1;
+  }
+  .btn-primary {
+    @apply btn-block bg-grass-500 text-white shadow-block hover:bg-grass-400 hover:shadow-block-sm;
+  }
+  .btn-diamond {
+    @apply btn-block bg-diamond-500 text-white shadow-block hover:bg-diamond-400 hover:shadow-block-sm;
+  }
+  .btn-gold {
+    @apply btn-block bg-gold-500 text-obsidian-900 shadow-block hover:bg-gold-400 hover:shadow-block-sm;
+  }
+  .btn-ghost {
+    @apply btn-block bg-white/10 text-white backdrop-blur hover:bg-white/20 border border-white/20;
+  }
+  .card-block {
+    @apply relative bg-gradient-to-b from-obsidian-900 to-obsidian-950 border border-white/10 rounded-xl overflow-hidden;
+  }
+  .section-pad {
+    @apply px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto;
+  }
+  .text-gradient-grass {
+    @apply bg-gradient-to-r from-grass-300 via-grass-400 to-diamond-400 bg-clip-text text-transparent;
+  }
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-gold-200 via-gold-400 to-gold-500 bg-clip-text text-transparent;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a14;
+}
+::-webkit-scrollbar-thumb {
+  background: #57b21f;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7cc944;
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(87, 178, 31, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(87, 178, 31, 0.07) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.shimmer-text {
+  background: linear-gradient(90deg, #7cc944 0%, #2bc4ff 50%, #7cc944 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 3s linear infinite;
+}
